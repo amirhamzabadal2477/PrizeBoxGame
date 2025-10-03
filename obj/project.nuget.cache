@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "7d3XP7nRZzM=",
+  "success": true,
+  "projectFilePath": "/Users/user/Amir/internship_task/task4/PrizeBoxGame/PrizeBoxGame.csproj",
+  "expectedPackageFiles": [
+    "/Users/user/.nuget/packages/bouncycastle.netcore/2.2.1/bouncycastle.netcore.2.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}

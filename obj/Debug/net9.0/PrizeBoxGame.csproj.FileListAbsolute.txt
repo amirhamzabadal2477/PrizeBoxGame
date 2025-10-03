@@ -1,0 +1,17 @@
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/bin/Debug/net9.0/PrizeBoxGame
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/bin/Debug/net9.0/PrizeBoxGame.deps.json
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/bin/Debug/net9.0/PrizeBoxGame.runtimeconfig.json
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/bin/Debug/net9.0/PrizeBoxGame.dll
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/bin/Debug/net9.0/PrizeBoxGame.pdb
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/bin/Debug/net9.0/BouncyCastle.Crypto.dll
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/obj/Debug/net9.0/PrizeBoxGame.csproj.AssemblyReference.cache
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/obj/Debug/net9.0/PrizeBoxGame.GeneratedMSBuildEditorConfig.editorconfig
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/obj/Debug/net9.0/PrizeBoxGame.AssemblyInfoInputs.cache
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/obj/Debug/net9.0/PrizeBoxGame.AssemblyInfo.cs
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/obj/Debug/net9.0/PrizeBoxGame.csproj.CoreCompileInputs.cache
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/obj/Debug/net9.0/PrizeBox.E4E84319.Up2Date
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/obj/Debug/net9.0/PrizeBoxGame.dll
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/obj/Debug/net9.0/refint/PrizeBoxGame.dll
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/obj/Debug/net9.0/PrizeBoxGame.pdb
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/obj/Debug/net9.0/PrizeBoxGame.genruntimeconfig.cache
+/Users/user/Amir/internship_task/task4/PrizeBoxGame/obj/Debug/net9.0/ref/PrizeBoxGame.dll

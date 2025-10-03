@@ -42,7 +42,6 @@ public class GameCore
 
         Console.WriteLine($"Morty: {string.Format(morty.GetOpeningRemark(), numBoxes)}  ");
         
-        // First random for portal placement
         int mortyValue1, rickValue1;
         string hmac1 = random1.GenerateHMAC(0, numBoxes - 1, out mortyValue1);
         Console.WriteLine($"Morty: HMAC1={hmac1}");
@@ -56,7 +55,6 @@ public class GameCore
 
         int portalBox = random1.GetFinalValue(internalRickValue1, numBoxes);
         
-        // Rick's guess
         Console.Write($"Morty: Okay, okay, I hid the gun. What's your guess (1 to {numBoxes})?  \nRick: ");
         int rickGuess;
         while (!int.TryParse(Console.ReadLine(), out rickGuess) || rickGuess < 1 || rickGuess > numBoxes)
@@ -75,19 +73,19 @@ public class GameCore
         Console.WriteLine($"Morty: I'm keeping box {boxesToKeep[0] + 1} and box {boxesToKeep[1] + 1}, and removing box {boxToRemove + 1}.");
 
         int mortyValue2, rickValue2;
-        string hmac2 = random2.GenerateHMAC(0, 1, out mortyValue2); // Range 0-1 for 2 boxes
+        string hmac2 = random2.GenerateHMAC(0, 1, out mortyValue2);
         Console.WriteLine($"Morty: HMAC2={hmac2}");
-        Console.Write($"Morty: Rick, enter your number (1 or 2) to decide which box to keep:  \nRick: ");
+        Console.Write($"Morty: Rick, enter which box to keep ({boxesToKeep[0] + 1} or {boxesToKeep[1] + 1}):  \nRick: ");
 
-        while (!int.TryParse(Console.ReadLine(), out rickValue2) || rickValue2 < 1 || rickValue2 > 2)
+        while (!int.TryParse(Console.ReadLine(), out rickValue2) || (rickValue2 != boxesToKeep[0] + 1 && rickValue2 != boxesToKeep[1] + 1))
         {
-            Console.Write($"Please enter 1 or 2: ");
+            Console.Write($"Please enter {boxesToKeep[0] + 1} or {boxesToKeep[1] + 1}: ");
         }
-        int internalRickValue2 = rickValue2 - 1;
 
-        int keepIndex = (internalRickValue2 + mortyValue2) % 2;
-        int finalBox = boxesToKeep[keepIndex];
-        int otherBox = boxesToKeep[1 - keepIndex];
+        int selectedBoxIndex = rickValue2 == boxesToKeep[0] + 1 ? 0 : 1;
+        int otherBoxIndex = 1 - selectedBoxIndex;
+        int finalBox = boxesToKeep[selectedBoxIndex];
+        int otherBox = boxesToKeep[otherBoxIndex];
 
         Console.Write($"Morty: You can switch to box {otherBox + 1}, or, you know, stick with box {finalBox + 1}.  \nRick: ");
         int switchChoice;
@@ -102,13 +100,15 @@ public class GameCore
         random1.RevealSecrets(out int revealedMorty1, out string key1);
         random2.RevealSecrets(out int revealedMorty2, out string key2);
 
+        int firstFairNumber = (rickValue1 + revealedMorty1) % numBoxes;
         Console.WriteLine($"Morty: Aww man, my 1st random value is {revealedMorty1}.  ");
         Console.WriteLine($"Morty: KEY1={key1}");
-        Console.WriteLine($"Morty: So the 1st fair number is ({rickValue1} + {revealedMorty1}) % {numBoxes} = {portalBox + 1}");
+        Console.WriteLine($"Morty: So the 1st fair number is ({rickValue1} + {revealedMorty1}) % {numBoxes} = {firstFairNumber}");
         
+        int secondFairNumber = (selectedBoxIndex + revealedMorty2) % 2;
         Console.WriteLine($"Morty: Aww man, my 2nd random value is {revealedMorty2}.  ");
         Console.WriteLine($"Morty: KEY2={key2}");
-        Console.WriteLine($"Morty: Uh, okay, the 2nd fair number is ({rickValue2} + {revealedMorty2}) % 2 = {keepIndex}"); // MODULO 2
+        Console.WriteLine($"Morty: Uh, okay, the 2nd fair number is ({selectedBoxIndex} + {revealedMorty2}) % 2 = {secondFairNumber}");
 
         bool won = finalChoice == portalBox;
         Console.WriteLine($"Morty: Your portal gun is in the box {portalBox + 1}. ");
